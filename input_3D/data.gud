@@ -1,0 +1,165 @@
+#######################
+ &GUD_FORCING_PARAMS
+ gud_chlInitBalanced= T,
+ ironFile='/home/stephdut/Input/input_ecco/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
+ ironPeriod= -12.,
+ gud_inscal_iron= 1000.,
+ PARFile='/home/stephdut/Input/input_ecco/ecco_oasim_total_below_oneband_einm2d.bin',
+ PARPeriod=-12.,
+ gud_inscal_PAR= 11.574074074074,
+#
+ windFile='/home/stephdut/Input/input_ecco/tren_speed_mth-2d.bin',
+ windPeriod= -12.,
+ icefile = '/home/jahn/gud/big/input/eccov3/SIarea.bin',
+ icestartdate1 = 19990101,
+ icestartdate2 = 120000,
+ iceperiod     = 86400.0,
+ /
+########################
+ &GUD_PARAMS
+ diaz_ini_fac= 0.1,
+ idebug=271,
+ jdebug=63,
+ gud_seed= 56,
+ gud_read_phos= F,
+ tempCoeffArr= 0.8,
+ PARmin= 0.1,
+ alpfe= 1.0,
+ freefemax = .1E-3,
+ depthfesed= 7000.,
+ scav_rat= 1.73611111111111111111E-7,
+ kdoc=  3.8580246913580247E-7,  ! 1/30day
+ kdop=  3.8580246913580247E-7,  ! 1/30day
+ kdon=  3.8580246913580247E-7,  ! 1/30day
+ kdofe= 3.8580246913580247E-7,  ! 1/30day
+ kPOC=  3.8580246913580247E-7,  ! 1/30day
+ kPOP=  3.8580246913580247E-7,  ! 1/30day
+ kPON=  3.8580246913580247E-7,  ! 1/30day
+ kPOFe= 3.8580246913580247E-7,  ! 1/30day
+ kPOSi= 7.7160493827160493E-8,  ! 1/150day
+ phygrazmin= 120E-10,
+ hollexp = 2.E0,
+ gud_atmos_pCO2= 278E-6,
+ /
+########################
+ &GUD_CDOM_PARAMS
+  fracCDOM = 0.02,
+  cdomdegrd= 3.8580e-08,
+  CDOMbleach = 3.0000e-06,
+  PARCDOM = 70.,
+  R_NP_CDOM  = 16.,
+  R_FeP_CDOM = 1.e-3,
+  R_CP_CDOM  = 120.,
+  CDOMcoeff = 21.,
+ /
+########################
+ &GUD_RANDOM_PARAMS
+ /
+########################
+ &GUD_TRAIT_PARAMS
+  gud_sort_biovol= F,
+#                        P  D  Z
+ grp_nplank(:)=          1, 1, 1,
+ grp_photo(:)=           1, 1, 0,
+ grp_pred(:)=            0, 0, 1
+ grp_prey(:)=            1, 1, 1,
+ grp_hasSi(:)=           0, 0, 0,
+ grp_hasPIC(:)=          0, 0, 0,
+ grp_DIAZO(:)=           0, 0, 0,
+ grp_useNH4(:)=          1, 1, 0,
+ grp_useNO2(:)=          1, 1, 0,
+ grp_useNO3(:)=          1, 1, 0,
+ grp_combNO(:)=          1, 1, 0,
+ grp_tempMort(:)=        0, 0, 0, 
+ grp_tempMort2(:)=       0, 0, 0,
+ grp_aptype(:)=          4, 5, 11,
+#
+ grp_Xmin(:)= 2*120E-20,
+
+ grp_mqyield(:)= 2*4.0E-5,
+ grp_chl2cmax(:)= .2, .3,
+ grp_acclimtimescl(:)= 2*5.7870370370370370E-6,
+ logvolbase= -.9000,
+ logvolinc= .513,
+ logvol0ind(:)= 1, 5, 7
+ a_biosink(:)= 2*6.951416635391563E-7, 0.,  ! .05*dm**.85
+ b_biosink(:)= 2*.2833333333333333, 0.,
+ a_vmax_DIC(1)= 0.9,
+ a_vmax_DIC(2)= 3.9,
+ a_vmax_DIC_denom(:)= 2*86400.,
+ b_vmax_DIC(:)= 0.08, -0.08, 0., 
+#
+ a_vmax_NO3(1)= 0.28,
+ a_vmax_NO3(2)= 0.28,
+ a_vmax_NO3_denom(:)= 2*86400.,
+ b_vmax_NO3(:)= -0.12, -0.12, 0.,
+#
+ a_vmax_NO2(1)= 0.28,
+ a_vmax_NO2(2)= 0.28,
+ a_vmax_NO2_denom(:)= 2*86400.,
+ b_vmax_NO2(:)= -0.12, -0.12, 0.,
+#
+ a_vmax_NH4(1)= 0.14,
+ a_vmax_NH4(2)= 0.14,
+ a_vmax_NH4_denom(:)= 2*86400.,
+ b_vmax_NH4(:)= -0.12, -0.12, 0.,
+#
+ a_vmax_PO4(1)= 0.02,
+ a_vmax_PO4(2)= 0.02,
+ a_vmax_PO4_denom(:)= 2*86400.,
+ b_vmax_PO4(:)= 0.01, 0.01, 0.,
+#
+ a_vmax_FeT(1)= 12.0e-6,
+ a_vmax_FeT(2)= 12.0e-6,
+ a_vmax_FeT_denom(:)= 2*86400.,
+ b_vmax_FeT(:)= 0.01, 0.01, 0.,
+#
+#a_vmax_SiO2(2)= 0.4,
+#a_vmax_SiO2_denom(:)= 2*86400.,
+#b_vmax_SiO2(2)= -0.12,
+#
+ a_kn_NO3(:) = 2*0.14,
+ b_kn_NO3(:) = 2*0.33,
+#a_kn_NO2(:) = 2*0.14,
+#b_kn_NO2(:) = 2*0.33,
+#a_kn_NH4(:) = 2*0.07,
+#b_kn_NH4(:) = 2*0.33,
+#a_kn_PO4(:) = 2*0.04,
+#b_kn_PO4(:) = 2*0.41,
+#a_kn_FeT(:) = 2*16.0E-6,
+#b_kn_FeT(:) = 2*0.27,
+#
+ a_qmin_n(:) = 2*0.035, 0.05,
+#a_qmax_n(:) = 2*0.17,  0.17,
+ b_qmin_n(:) = -0.06, -0.06, 0.0,
+#
+#a_qmin_p(:) = 2*0.005, 0.008,
+#a_qmax_p(:) = 2*0.02,  0.01,
+#
+#a_qmin_fe(:) = 2*5.0e-6, 5.0e-6,
+#a_qmax_fe(:) = 2*2.0e-5, 2.0e-5,
+#
+ gud_effective_ksat= T,
+ gud_select_kn_allom= 2,
+#
+ grp_FracExudeC(:) = 0.7, 0.5, 0.0,
+ a_respir(:) = 3*0.0,
+#
+ grp_ExportFracPreyPred(1:2,3)= 2*.8,
+ grp_R_ChlC(3)= 0.,
+ a_graz(3)= 3.4722000000000000E-05,  ! prowe values
+ b_graz(3)= -0.16,
+#
+ grp_mort(:)= 6e-7, 6e-7, 2e-7  ! 1/7days, 1/50days
+ grp_mort2(:)= 6e-7, 6e-7, 8e-7,  ! 16*.6/120/day
+ grp_tempcoeff2= 2*.0003,
+ grp_R_PC(:)= 3*0.008333333333333333,
+ grp_R_FeC(:)= 0.008333333333333333E-3, 0.008333333333333333E-3, 0.001333333333333333E-3,
+ grp_R_NC(:)= 0.13333333333333333, 2*0.13333333333333333,
+ grp_R_SiC(:)= 0., 0., 0.,
+ grp_R_PICPOC(:)= 3*0.,
+ a_kg(:)= 2*1.5, 1*1.5,
+ b_kg(:)= 3*0,
+#
+ grp_ass_eff(:,:)=9*0.5,
+ /
